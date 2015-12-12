@@ -11,7 +11,6 @@
     // perform the initialization
     // executed when the module is loaded
     app.run(function ($httpBackend) {
-        debugger;
         var products = [
            {
                "productId": 1,

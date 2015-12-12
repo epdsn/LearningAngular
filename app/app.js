@@ -17,15 +17,26 @@
                 function ($stateProvider, $urlRouterProvider) {
 
                     // default state if no state is active
-                    $urlRouterProvider.otherwise("/products");
+                    $urlRouterProvider.otherwise("/");
 
                     $stateProvider
+                        .state("home", {
+                            url: "/",
+                            templateUrl: "app/welcomeView.html"
+                        })
                     //Products
                     .state("productList"  , {  // state productlist
                         url: "/products", // sets url
                         templateUrl: "app/products/productListView.html", // path for template
                         controller: "ProductListCtrl  as vm" // controller used
                     })
+
+                    .state("productEdit", {
+                            url: "/products/edit/:productId",
+                            templateUrl: "app/products/productEditView.html",
+                            controller: "ProductEditCtrl as vm"
+                        })
+
                 }]
 
     );
